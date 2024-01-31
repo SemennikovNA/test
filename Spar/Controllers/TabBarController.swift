@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
 
     //MARK: - Life cycle
     
@@ -21,15 +21,24 @@ class TabBarController: UITabBarController {
     //MARK: - Private methods
     /// Method for installing tab bar
     private func setupTabBar() {
+        // Setup view controllers for tab bar
          viewControllers = [
-            setupViewControllers(viewController: MainViewController(), title: "Главная", image: nil)
+            setupViewControllers(viewController: MainViewController(), title: "Главная", normalImage: "list.bullet.clipboard", selectedImage: "list.clipboard.fill"),
+            setupViewControllers(viewController: CatalogViewController(), title: "Каталог", normalImage: "greetingcard", selectedImage: "greetingcard.fill"),
+            setupViewControllers(viewController: BasketViewController(), title: "Корзина", normalImage: "cart", selectedImage: "cart.fill"),
+            setupViewControllers(viewController: ProfileViewController(), title: "Профиль", normalImage: "person", selectedImage: "person.fill")
          ]
+        
+        // Setup tab bar colors
+        tabBar.tintColor = .systemGreen
     }
     
     /// Method for setting an element in a tab bar
-    private func setupViewControllers(viewController: UIViewController, title: String, image: UIImage? = nil) -> UIViewController {
+    private func setupViewControllers(viewController: UIViewController, title: String, normalImage: String = "", selectedImage: String = "") -> UIViewController {
+    
         viewController.title = title
-        viewController.tabBarItem.image = image
+        viewController.tabBarItem.image = UIImage(systemName: normalImage)
+        viewController.tabBarItem.selectedImage = UIImage(systemName: selectedImage)
         return viewController
     }
 }
