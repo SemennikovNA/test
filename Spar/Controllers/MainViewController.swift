@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     
     //MARK: - Life cycle
@@ -15,9 +15,22 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // Call method's
+        setupView()
+        setupConstraints()
     }
 
+    //MARK: - Private methods
+    /// Method for setup main view controller
+    private func setupView() {
+        view.backgroundColor = .yellow
+    }
+}
 
+private extension MainViewController {
+    
+    func setupConstraints() {
+        
+    }
 }
 
