@@ -19,6 +19,7 @@
 		1E6AB5082B6A38110036803A /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5072B6A38110036803A /* BasketViewController.swift */; };
 		1E6AB50B2B6A39310036803A /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB50A2B6A39310036803A /* CatalogViewController.swift */; };
 		1E6AB50D2B6A45760036803A /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB50C2B6A45760036803A /* CustomNavigationController.swift */; };
+		1E6AB50F2B6A50660036803A /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB50E2B6A50660036803A /* PriceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		1E6AB5072B6A38110036803A /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		1E6AB50A2B6A39310036803A /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		1E6AB50C2B6A45760036803A /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		1E6AB50E2B6A50660036803A /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				1E6AB5002B6A307F0036803A /* MainView.swift */,
+				1E6AB50E2B6A50660036803A /* PriceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				1E6AB5042B6A31CC0036803A /* Extension - UIView.swift in Sources */,
 				1E6AB4EA2B6A273F0036803A /* MainViewController.swift in Sources */,
 				1E6AB4FF2B6A28030036803A /* TabBarController.swift in Sources */,
+				1E6AB50F2B6A50660036803A /* PriceView.swift in Sources */,
 				1E6AB4E62B6A273F0036803A /* AppDelegate.swift in Sources */,
 				1E6AB5062B6A342E0036803A /* ProfileViewController.swift in Sources */,
 				1E6AB5012B6A307F0036803A /* MainView.swift in Sources */,
@@ -282,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -339,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -364,6 +368,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,6 +401,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

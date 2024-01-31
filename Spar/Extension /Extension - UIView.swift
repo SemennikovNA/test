@@ -15,4 +15,11 @@ extension UIView {
             addSubview(view)
         }
     }
+    
+    func dropShadow() {
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 2, height: -5)
+        self.layer.shadowRadius = 5
+    }
 }
