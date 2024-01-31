@@ -54,11 +54,23 @@ class ProductCardView: UIView {
         stack.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         return stack
     }()
+    private lazy var allCharacteristics: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(.systemGreen, for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        button.setTitle("Все характеристики", for: .normal)g
+        return button
+    }()
     
     // Label's
     private lazy var descriptionLabel = UILabel(text: "", font: .boldSystemFont(ofSize: 15), textColor: .black)
     private lazy var descriptionInfoLabel = UILabel(text: "", font: .systemFont(ofSize: 12), textColor: .black)
     private lazy var mainCharacteristics = UILabel(text: "Основные характеристики", font: .boldSystemFont(ofSize: 15), textColor: .black)
+    private lazy var manufacturedLabel = UILabel(text: "Производство..........................Россия, Краснодарский край", font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var energyPriceLabel = UILabel(text: "Энергетическая ценность, ккал/100 г........25 ккал, 105 кДж", font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var fatsLabel = UILabel(text: "Жиры/100 г........................................................................0,1 г", font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var proteinLabel = UILabel(text: "Белки/100 г........................................................................1,3 г", font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var carbohydratesLabel = UILabel(text: "Углеводы/100 г..................................................................3,3 г", font: .systemFont(ofSize: 12), textColor: .black)
         
     //MARK: - Inititalize
     
@@ -84,7 +96,7 @@ class ProductCardView: UIView {
     private func setupView() {
         self.addSubviews(productImage, productName, manufacturedCountryImage, manufacturedCountryLabel, productInfoStack)
         productImage.addSubviews(priceToTheCardImage, saleImage)
-        productInfoStack.addArrangedSubviews(descriptionLabel, descriptionInfoLabel, mainCharacteristics)
+        productInfoStack.addArrangedSubviews(descriptionLabel, descriptionInfoLabel, mainCharacteristics, manufacturedLabel, energyPriceLabel, fatsLabel, proteinLabel, carbohydratesLabel, allCharacteristics)
     }
     
     //MARK: - Open methods
@@ -152,10 +164,6 @@ private extension ProductCardView {
             productInfoStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             productInfoStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             productInfoStack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-            // Description
-//            descriptionLabel.topAnchor.constraint(equalTo: productInfoStack.topAnchor),
-//            descriptionLabel.leadingAnchor.constraint(equalTo: productInfoStack.leadingAnchor),
         ])
     }
 }
