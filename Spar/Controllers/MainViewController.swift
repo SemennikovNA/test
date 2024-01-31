@@ -52,6 +52,7 @@ final class MainViewController: UIViewController {
         priceView.greenPriceView.setTitleForProductCountLabel(title: String(values.countOfProduct))
         productCardView.setProductName(title: String(values.productName))
         productCardView.setManufaturedCountryLabel(title: String(values.manufacturerСountry))
+        productCardView.setDescriptionInfo(title: String(values.description), allDescription: String(values.descriptionInfo))
         
         // Call method's
         setupTargetsForButton()

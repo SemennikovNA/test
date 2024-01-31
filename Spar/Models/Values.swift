@@ -13,4 +13,7 @@ struct Values {
     var productPrice = 120
     var productName = "Добавка 'Липа' к чаю 200 г"
     var manufacturerСountry = "Испания, Риоха"
+    var description = "Описание"
+    var descriptionInfo = "Флавоноиды липового цвета обладают противовосполительным действием, способствуют укреплению стенки сосудов"
+    
 }

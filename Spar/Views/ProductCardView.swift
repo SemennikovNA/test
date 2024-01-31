@@ -45,6 +45,20 @@ class ProductCardView: UIView {
         label.textColor = .darkGray
         return label
     }()
+    private lazy var productInfoStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.alignment = .leading
+        stack.spacing = 10
+        stack.distribution = .equalSpacing
+        stack.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        return stack
+    }()
+    
+    // Label's
+    private lazy var descriptionLabel = UILabel(text: "", font: .boldSystemFont(ofSize: 15), textColor: .black)
+    private lazy var descriptionInfoLabel = UILabel(text: "", font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var mainCharacteristics = UILabel(text: "Основные характеристики", font: .boldSystemFont(ofSize: 15), textColor: .black)
         
     //MARK: - Inititalize
     
@@ -68,8 +82,9 @@ class ProductCardView: UIView {
     //MARK: - Private methods
     
     private func setupView() {
-        self.addSubviews(productImage, productName, manufacturedCountryImage, manufacturedCountryLabel)
+        self.addSubviews(productImage, productName, manufacturedCountryImage, manufacturedCountryLabel, productInfoStack)
         productImage.addSubviews(priceToTheCardImage, saleImage)
+        productInfoStack.addArrangedSubviews(descriptionLabel, descriptionInfoLabel, mainCharacteristics)
     }
     
     //MARK: - Open methods
@@ -80,6 +95,12 @@ class ProductCardView: UIView {
     
     func setManufaturedCountryLabel(title: String) {
         manufacturedCountryLabel.text = title
+    }
+    
+    func setDescriptionInfo(title: String, allDescription: String) {
+        descriptionLabel.text = title
+        descriptionInfoLabel.text = allDescription
+        descriptionInfoLabel.numberOfLines = 0
     }
 }
 
@@ -125,6 +146,16 @@ private extension ProductCardView {
             manufacturedCountryLabel.leadingAnchor.constraint(equalTo: manufacturedCountryImage.trailingAnchor, constant: 20),
             manufacturedCountryLabel.widthAnchor.constraint(equalToConstant: 150),
             manufacturedCountryLabel.heightAnchor.constraint(equalToConstant: 30),
+            
+            // Product info stack
+            productInfoStack.topAnchor.constraint(equalTo: manufacturedCountryLabel.bottomAnchor, constant: 20),
+            productInfoStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            productInfoStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            productInfoStack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            // Description
+//            descriptionLabel.topAnchor.constraint(equalTo: productInfoStack.topAnchor),
+//            descriptionLabel.leadingAnchor.constraint(equalTo: productInfoStack.leadingAnchor),
         ])
     }
 }
