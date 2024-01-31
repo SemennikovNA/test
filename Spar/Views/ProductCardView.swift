@@ -27,18 +27,23 @@ class ProductCardView: UIView {
         image.image = UIImage(named: "sale")
         return image
     }()
-    
     private lazy var productName: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 25)
         label.numberOfLines = 0
         return label
     }()
-    
-    private lazy var productInfoStack: UIStackView = {
-        let stack = UIStackView()
-        
-        return stack
+    private lazy var manufacturedCountryImage: UIImageView = {
+        let image = UIImageView()
+        image.clipsToBounds = true
+        image.image = UIImage(named: "spain")
+        return image
+    }()
+    private lazy var manufacturedCountryLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = .darkGray
+        return label
     }()
         
     //MARK: - Inititalize
@@ -55,17 +60,26 @@ class ProductCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        manufacturedCountryImage.layer.cornerRadius = manufacturedCountryImage.frame.size.width / 2
+    }
+    
     //MARK: - Private methods
     
     private func setupView() {
-        self.addSubviews(productImage)
-        productImage.addSubviews(priceToTheCardImage, saleImage, productName)
+        self.addSubviews(productImage, productName, manufacturedCountryImage, manufacturedCountryLabel)
+        productImage.addSubviews(priceToTheCardImage, saleImage)
     }
     
     //MARK: - Open methods
     /// Setup value for product name title
     func setProductName(title: String) {
         productName.text = title
+    }
+    
+    func setManufaturedCountryLabel(title: String) {
+        manufacturedCountryLabel.text = title
     }
 }
 
@@ -96,9 +110,21 @@ private extension ProductCardView {
             
             // Product name label
             productName.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 10),
-            productName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            productName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             productName.widthAnchor.constraint(equalToConstant: 200),
-            productName.heightAnchor.constraint(equalToConstant: 100),
+            productName.heightAnchor.constraint(equalToConstant: 70),
+            
+            // Manufactured country image
+            manufacturedCountryImage.topAnchor.constraint(equalTo: productName.bottomAnchor, constant: 10),
+            manufacturedCountryImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            manufacturedCountryImage.widthAnchor.constraint(equalToConstant: 30),
+            manufacturedCountryImage.heightAnchor.constraint(equalToConstant: 30),
+            
+            // Manufactured country label
+            manufacturedCountryLabel.topAnchor.constraint(equalTo: productName.bottomAnchor, constant: 10),
+            manufacturedCountryLabel.leadingAnchor.constraint(equalTo: manufacturedCountryImage.trailingAnchor, constant: 20),
+            manufacturedCountryLabel.widthAnchor.constraint(equalToConstant: 150),
+            manufacturedCountryLabel.heightAnchor.constraint(equalToConstant: 30),
         ])
     }
 }

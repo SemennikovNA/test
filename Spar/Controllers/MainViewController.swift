@@ -47,10 +47,11 @@ final class MainViewController: UIViewController {
         // Setup custom view
         priceView.dropShadow()
         
-        // Set default value for label
+        // Set default value for label's
         priceView.greenPriceView.setTitleForPriceLabel(title: String(values.productPrice))
         priceView.greenPriceView.setTitleForProductCountLabel(title: String(values.countOfProduct))
         productCardView.setProductName(title: String(values.productName))
+        productCardView.setManufaturedCountryLabel(title: String(values.manufacturerСountry))
         
         // Call method's
         setupTargetsForButton()
@@ -110,7 +111,7 @@ private extension MainViewController {
             productCardView.topAnchor.constraint(equalTo: contentView.topAnchor),
             productCardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             productCardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            productCardView.heightAnchor.constraint(equalToConstant: 250),
+            productCardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
             // Price view
             priceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
