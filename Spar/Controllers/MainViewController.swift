@@ -9,7 +9,6 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
-    
     //MARK: - Life cycle
     
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ final class MainViewController: UIViewController {
     //MARK: - Private methods
     /// Method for setup main view controller
     private func setupView() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
     }
 }
 
