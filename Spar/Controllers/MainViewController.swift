@@ -50,6 +50,7 @@ final class MainViewController: UIViewController {
         // Set default value for label
         priceView.greenPriceView.setTitleForPriceLabel(title: String(values.productPrice))
         priceView.greenPriceView.setTitleForProductCountLabel(title: String(values.countOfProduct))
+        productCardView.setProductName(title: String(values.productName))
         
         // Call method's
         setupTargetsForButton()

@@ -11,4 +11,5 @@ struct Values {
     
     var countOfProduct = 1
     var productPrice = 120
+    var productName = "Добавка 'Липа' к чаю 200 г"
 }

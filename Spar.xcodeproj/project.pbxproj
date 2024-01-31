@@ -23,6 +23,7 @@
 		1E6AB5112B6A6FDD0036803A /* GreenPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5102B6A6FDD0036803A /* GreenPriceView.swift */; };
 		1E6AB5132B6A78540036803A /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5122B6A78540036803A /* Values.swift */; };
 		1E6AB5152B6A911E0036803A /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5142B6A911E0036803A /* ProductCardView.swift */; };
+		1E6AB5172B6A9FAB0036803A /* Extension - UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5162B6A9FAB0036803A /* Extension - UIStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		1E6AB5102B6A6FDD0036803A /* GreenPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenPriceView.swift; sourceTree = "<group>"; };
 		1E6AB5122B6A78540036803A /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		1E6AB5142B6A911E0036803A /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		1E6AB5162B6A9FAB0036803A /* Extension - UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension - UIStackView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				1E6AB5032B6A31CC0036803A /* Extension - UIView.swift */,
+				1E6AB5162B6A9FAB0036803A /* Extension - UIStackView.swift */,
 			);
 			path = "Extension ";
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				1E6AB5012B6A307F0036803A /* MainView.swift in Sources */,
 				1E6AB5132B6A78540036803A /* Values.swift in Sources */,
 				1E6AB50D2B6A45760036803A /* CustomNavigationController.swift in Sources */,
+				1E6AB5172B6A9FAB0036803A /* Extension - UIStackView.swift in Sources */,
 				1E6AB50B2B6A39310036803A /* CatalogViewController.swift in Sources */,
 				1E6AB5082B6A38110036803A /* BasketViewController.swift in Sources */,
 				1E6AB4E82B6A273F0036803A /* SceneDelegate.swift in Sources */,

@@ -30,7 +30,15 @@ class ProductCardView: UIView {
     
     private lazy var productName: UILabel = {
         let label = UILabel()
-        return labelg
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var productInfoStack: UIStackView = {
+        let stack = UIStackView()
+        
+        return stack
     }()
         
     //MARK: - Inititalize
@@ -51,7 +59,13 @@ class ProductCardView: UIView {
     
     private func setupView() {
         self.addSubviews(productImage)
-        productImage.addSubviews(priceToTheCardImage, saleImage)
+        productImage.addSubviews(priceToTheCardImage, saleImage, productName)
+    }
+    
+    //MARK: - Open methods
+    /// Setup value for product name title
+    func setProductName(title: String) {
+        productName.text = title
     }
 }
 
@@ -79,6 +93,12 @@ private extension ProductCardView {
             saleImage.trailingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: -10),
             saleImage.heightAnchor.constraint(equalToConstant: 40),
             saleImage.widthAnchor.constraint(equalToConstant: 70),
+            
+            // Product name label
+            productName.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 10),
+            productName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            productName.widthAnchor.constraint(equalToConstant: 200),
+            productName.heightAnchor.constraint(equalToConstant: 100),
         ])
     }
 }
