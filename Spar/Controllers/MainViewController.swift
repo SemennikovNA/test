@@ -11,7 +11,7 @@ final class MainViewController: UIViewController {
     
     //MARK: - Properties
     
-    let values = Values()
+    var values = Values()
     
     //MARK: - User elements
     
@@ -30,27 +30,59 @@ final class MainViewController: UIViewController {
     //MARK: - Private methods
     /// Method for setup main view controller
     private func setupView() {
+        // Setup view
         view.backgroundColor = .white
         view.addSubviews(priceView)
+        
+        // Setup custom view
         priceView.dropShadow()
+        
+        // Set default value for label
+        priceView.greenPriceView.setTitleForPriceLabel(title: String(values.productPrice))
+        priceView.greenPriceView.setTitleForProductCountLabel(title: String(values.countOfProduct))
+        
+        // Call method's
         setupTargetsForButton()
     }
     
+    /// Setup targets for buttons
     private func setupTargetsForButton() {
         priceView.greenPriceView.addTargetsForMinusButton(target: self, selector: #selector(minusButtonTapped))
         priceView.greenPriceView.addTargetsForPlusButton(target: self, selector: #selector(plusButtonTapped))
     }
     
     //MARK: - Objective - C methods
-    
+    /// Logic that works when you press the minus button
     @objc private func minusButtonTapped() {
-        
+        if values.countOfProduct > 1 {
+              values.countOfProduct -= 1
+              
+              if values.countOfProduct == 0 {
+                  values.countOfProduct = 1
+              }
+              
+              let price = String(values.productPrice / values.countOfProduct)
+              
+              
+              let title = String(values.countOfProduct)
+              
+              priceView.greenPriceView.setTitleForProductCountLabel(title: title)
+              priceView.greenPriceView.setTitleForPriceLabel(title: price)
+          }
     }
     
+    /// Logic that works when you press the plus button
     @objc private func plusButtonTapped() {
+        values.countOfProduct += 1
+        let price = String(values.productPrice * values.countOfProduct)
+        let title = String(values.countOfProduct)
         
+        priceView.greenPriceView.setTitleForProductCountLabel(title: title)
+        priceView.greenPriceView.setTitleForPriceLabel(title: price)
     }
 }
+
+//MARK: - Extension
 
 private extension MainViewController {
     /// Method for setup contraints main view controller

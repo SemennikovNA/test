@@ -21,7 +21,6 @@ final class GreenPriceView: UIView {
     
     private lazy var productCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "1 шт"
         label.font = .boldSystemFont(ofSize: 20)
         label.textAlignment = .center
         label.textColor = .white
@@ -30,7 +29,6 @@ final class GreenPriceView: UIView {
     
     private lazy var priceLabel: UILabel = {
         let label = UILabel()
-        label.text = "120.0 ₽"
         label.textAlignment = .center
         label.textColor = .white
         return label
@@ -75,12 +73,14 @@ final class GreenPriceView: UIView {
         plusButton.addTarget(target, action: selector, for: .touchUpInside)
     }
     
+    /// Set title for product count label
     func setTitleForProductCountLabel(title: String) {
-        productCountLabel.text = title
+        productCountLabel.text = "\(title) шт"
     }
     
+    /// Set title for price label
     func setTitleForPriceLabel(title: String) {
-        priceLabel.text = title
+        priceLabel.text = "\(title) ₽"
     }
 }
 
