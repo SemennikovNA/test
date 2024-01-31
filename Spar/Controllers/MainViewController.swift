@@ -23,6 +23,7 @@ final class MainViewController: UIViewController {
         return scroll
     }()
     private lazy var contentView = UIView()
+    private lazy var productCardView = ProductCardView()
     
     //MARK: - Life cycle
     
@@ -37,11 +38,11 @@ final class MainViewController: UIViewController {
     //MARK: - Private methods
     /// Method for setup main view controller
     private func setupView() {
-        // Setup view
+        // Setup view's
         view.backgroundColor = .white
-        contentView.backgroundColor = .black
         view.addSubviews(scrollView, priceView)
         scrollView.addSubviews(contentView)
+        contentView.addSubviews(productCardView)
         
         // Setup custom view
         priceView.dropShadow()
@@ -102,6 +103,13 @@ private extension MainViewController {
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor), 
+            
+            // Produsct card view
+            productCardView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            productCardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            productCardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            productCardView.heightAnchor.constraint(equalToConstant: 250),
             
             // Price view
             priceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

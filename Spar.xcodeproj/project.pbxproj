@@ -22,6 +22,7 @@
 		1E6AB50F2B6A50660036803A /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB50E2B6A50660036803A /* PriceView.swift */; };
 		1E6AB5112B6A6FDD0036803A /* GreenPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5102B6A6FDD0036803A /* GreenPriceView.swift */; };
 		1E6AB5132B6A78540036803A /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5122B6A78540036803A /* Values.swift */; };
+		1E6AB5152B6A911E0036803A /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5142B6A911E0036803A /* ProductCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1E6AB50E2B6A50660036803A /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
 		1E6AB5102B6A6FDD0036803A /* GreenPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenPriceView.swift; sourceTree = "<group>"; };
 		1E6AB5122B6A78540036803A /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
+		1E6AB5142B6A911E0036803A /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				1E6AB5002B6A307F0036803A /* MainView.swift */,
 				1E6AB50E2B6A50660036803A /* PriceView.swift */,
 				1E6AB5102B6A6FDD0036803A /* GreenPriceView.swift */,
+				1E6AB5142B6A911E0036803A /* ProductCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				1E6AB4FF2B6A28030036803A /* TabBarController.swift in Sources */,
 				1E6AB50F2B6A50660036803A /* PriceView.swift in Sources */,
 				1E6AB4E62B6A273F0036803A /* AppDelegate.swift in Sources */,
+				1E6AB5152B6A911E0036803A /* ProductCardView.swift in Sources */,
 				1E6AB5062B6A342E0036803A /* ProfileViewController.swift in Sources */,
 				1E6AB5012B6A307F0036803A /* MainView.swift in Sources */,
 				1E6AB5132B6A78540036803A /* Values.swift in Sources */,
