@@ -7,9 +7,11 @@
 
 import UIKit
 
-class PriceView: UIView {
+final class PriceView: UIView {
     
     //MARK: - User elements
+    
+    let greenPriceView = GreenPriceView()
 
     private lazy var choiceOfPackagingSegmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Шт", "Кг"])
@@ -36,7 +38,7 @@ class PriceView: UIView {
         return label
     }()
         
-    //MAR₽K: - Initialize
+    //MARK: - Initialize
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,12 +51,20 @@ class PriceView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        greenPriceView.layer.cornerRadius = greenPriceView.frame.size.width / 6
+        greenPriceView.layer.masksToBounds = true
+    }
+    
     //MARK: - Private methods
     
     private func setupView() {
-        self.addSubviews(choiceOfPackagingSegmentedControl, priceLabel, oldPrice)
+        self.addSubviews(choiceOfPackagingSegmentedControl, priceLabel, oldPrice, greenPriceView)
     }
 }
+
+//MARK: - Extension
 
 private extension PriceView {
     
@@ -75,7 +85,12 @@ private extension PriceView {
             oldPrice.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10),
             oldPrice.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             oldPrice.widthAnchor.constraint(equalToConstant: 50),
-            oldPrice.heightAnchor.constraint(equalToConstant: 20)
+            oldPrice.heightAnchor.constraint(equalToConstant: 20),
+            
+            greenPriceView.topAnchor.constraint(equalTo: choiceOfPackagingSegmentedControl.bottomAnchor, constant: 20),
+            greenPriceView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            greenPriceView.widthAnchor.constraint(equalToConstant: 180),
+            greenPriceView.heightAnchor.constraint(equalToConstant: 60),
         ])
     }
 }

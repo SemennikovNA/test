@@ -9,6 +9,10 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
+    //MARK: - Properties
+    
+    let values = Values()
+    
     //MARK: - User elements
     
     private lazy var priceView = PriceView()
@@ -29,7 +33,22 @@ final class MainViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubviews(priceView)
         priceView.dropShadow()
-
+        setupTargetsForButton()
+    }
+    
+    private func setupTargetsForButton() {
+        priceView.greenPriceView.addTargetsForMinusButton(target: self, selector: #selector(minusButtonTapped))
+        priceView.greenPriceView.addTargetsForPlusButton(target: self, selector: #selector(plusButtonTapped))
+    }
+    
+    //MARK: - Objective - C methods
+    
+    @objc private func minusButtonTapped() {
+        
+    }
+    
+    @objc private func plusButtonTapped() {
+        
     }
 }
 
