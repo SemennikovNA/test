@@ -28,7 +28,7 @@ final class MainViewController: UIViewController {
 }
 
 private extension MainViewController {
-    
+    /// Method for setup contraints main view controller
     func setupConstraints() {
         
     }
