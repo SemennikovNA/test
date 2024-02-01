@@ -18,7 +18,6 @@ final class GreenPriceView: UIView {
         button.contentMode = .scaleAspectFit
         return button
     }()
-    
     private lazy var productCountLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 20)
@@ -26,14 +25,12 @@ final class GreenPriceView: UIView {
         label.textColor = .white
         return label
     }()
-    
     private lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .white
         return label
     }()
-    
     private lazy var plusButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
@@ -59,7 +56,11 @@ final class GreenPriceView: UIView {
     
     private func setupView() {
         self.backgroundColor = .systemGreen
-        self.addSubviews(minusButton, productCountLabel, priceLabel, plusButton)
+        self.addSubviews(minusButton,
+                         productCountLabel,
+                         priceLabel,
+                         plusButton
+        )
     }
     
     //MARK: - Open methods
@@ -84,10 +85,10 @@ final class GreenPriceView: UIView {
     }
 }
 
-//MARK: - Extension
+//MARK: - Private extension
 
 private extension GreenPriceView {
-    /// Setup constraints for view
+    /// Setup constraints for green price view
     func setupConstraints() {
         NSLayoutConstraint.activate([
             // Minus button
