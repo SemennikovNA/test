@@ -7,13 +7,10 @@
 
 import UIKit
 
-//MARK: - Propertie
-
 class ReviewsView: UIView {
     
-    static let reuseID = "ReviewCollectionHeaderView"
-    
     //MARK: - User interface elements
+    
     var reviewsCollection = ReviewCollectionView()
     private lazy var headerTitle = UILabel(text: "", font: .boldSystemFont(ofSize: 17), textColor: .black)
     private lazy var viewAllReviewsButton: UIButton = {

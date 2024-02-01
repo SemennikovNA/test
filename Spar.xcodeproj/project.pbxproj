@@ -29,6 +29,7 @@
 		1E6AB51D2B6B565F0036803A /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB51C2B6B565F0036803A /* ReviewModel.swift */; };
 		1E6AB5232B6B9D120036803A /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5222B6B9D120036803A /* ReviewsView.swift */; };
 		1E6AB5252B6BABF90036803A /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5242B6BABF90036803A /* StarView.swift */; };
+		1E6AB5272B6BB6AB0036803A /* ReviewsStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5262B6BB6AB0036803A /* ReviewsStar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		1E6AB51C2B6B565F0036803A /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		1E6AB5222B6B9D120036803A /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
 		1E6AB5242B6BABF90036803A /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		1E6AB5262B6BB6AB0036803A /* ReviewsStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsStar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				1E6AB51A2B6B51FD0036803A /* ReviewsCollectionCell.swift */,
 				1E6AB5222B6B9D120036803A /* ReviewsView.swift */,
 				1E6AB5242B6BABF90036803A /* StarView.swift */,
+				1E6AB5262B6BB6AB0036803A /* ReviewsStar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				1E6AB50B2B6A39310036803A /* CatalogViewController.swift in Sources */,
 				1E6AB5192B6ABADD0036803A /* Extesion - UILabel.swift in Sources */,
 				1E6AB5082B6A38110036803A /* BasketViewController.swift in Sources */,
+				1E6AB5272B6BB6AB0036803A /* ReviewsStar.swift in Sources */,
 				1E6AB4E82B6A273F0036803A /* SceneDelegate.swift in Sources */,
 				1E6AB5252B6BABF90036803A /* StarView.swift in Sources */,
 				1E6AB51D2B6B565F0036803A /* ReviewModel.swift in Sources */,

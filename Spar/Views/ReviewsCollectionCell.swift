@@ -16,14 +16,10 @@ class ReviewsCollectionCell: UICollectionViewCell {
     //MARK: - User interface elements
     
     private lazy var contentCellView = UIView()
-    private lazy var nameLabel = UILabel(text: "", font: .boldSystemFont(ofSize: 16), textColor: .black)
-    private lazy var dateLabel = UILabel(text: "", font: .systemFont(ofSize: 12), textColor: .gray)
-    private lazy var starCountView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        return view
-    }()
-    private lazy var reviewLabel = UILabel(text: "", font: .systemFont(ofSize: 15), textColor: .darkGray)
+    private lazy var nameLabel = UILabel(font: .boldSystemFont(ofSize: 16), textColor: .black)
+    private lazy var dateLabel = UILabel(font: .systemFont(ofSize: 12), textColor: .gray)
+    private lazy var starCountView = ReviewsStar()
+    private lazy var reviewLabel = UILabel(font: .systemFont(ofSize: 15), textColor: .darkGray)
     
     //MARK: - Initialize
     

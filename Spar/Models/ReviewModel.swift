@@ -11,6 +11,5 @@ struct ReviewModel {
     
     let name: String
     let date: String
-    let starCount: Int
     let review: String
 }
