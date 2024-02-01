@@ -64,7 +64,7 @@ class ProductCardView: UIView {
     
     // Label's
     private lazy var descriptionLabel = UILabel(text: "", font: .boldSystemFont(ofSize: 15), textColor: .black)
-    private lazy var descriptionInfoLabel = UILabel(text: "", font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var descriptionInfoLabel = UILabel(text: "", font: .systemFont(ofSize: 12), textColor: .black, numberOfLines: 0)
     private lazy var mainCharacteristics = UILabel(text: "Основные характеристики", font: .boldSystemFont(ofSize: 15), textColor: .black)
     private lazy var manufacturedLabel = UILabel(text: "Производство..........................Россия, Краснодарский край", font: .systemFont(ofSize: 12), textColor: .black)
     private lazy var energyPriceLabel = UILabel(text: "Энергетическая ценность, ккал/100 г........25 ккал, 105 кДж", font: .systemFont(ofSize: 12), textColor: .black)
@@ -94,6 +94,7 @@ class ProductCardView: UIView {
     //MARK: - Private methods
     
     private func setupView() {
+        // Setup view
         self.addSubviews(productImage, productName, manufacturedCountryImage, manufacturedCountryLabel, productInfoStack)
         productImage.addSubviews(priceToTheCardImage, saleImage)
         productInfoStack.addArrangedSubviews(
@@ -107,22 +108,17 @@ class ProductCardView: UIView {
             carbohydratesLabel,
             allCharacteristics
         )
+    
+        //
     }
     
     //MARK: - Open methods
-    /// Setup value for product name title
-    func setProductName(title: String) {
-        productName.text = title
-    }
-    
-    func setManufaturedCountryLabel(title: String) {
-        manufacturedCountryLabel.text = title
-    }
-    
-    func setDescriptionInfo(title: String, allDescription: String) {
-        descriptionLabel.text = title
-        descriptionInfoLabel.text = allDescription
-        descriptionInfoLabel.numberOfLines = 0
+    /// Setup value for product name title's
+    func setupTitles(with model: Values) {
+        productName.text = model.productName
+        manufacturedCountryLabel.text = model.manufacturerСountry
+        descriptionLabel.text = model.description
+        descriptionInfoLabel.text = model.descriptionInfo
     }
     
     /// Add target for allCharacteristics button

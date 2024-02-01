@@ -24,11 +24,11 @@ final class MainViewController: UIViewController {
     }()
     private lazy var contentView = UIView()
     private lazy var productCardView = ProductCardView()
-    private lazy var reviewCollection: ReviewCollectionView = {
-        let collection = ReviewCollectionView()
-        collection.delegate = self
-        collection.dataSource = self
-        return collection
+    private lazy var reviewsView: ReviewsView = {
+        let view = ReviewsView()
+        view.reviewsCollection.delegate = self
+        view.reviewsCollection.dataSource = self
+        return view
     }()
     
     //MARK: - Life cycle
@@ -48,17 +48,16 @@ final class MainViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubviews(scrollView, priceView)
         scrollView.addSubviews(contentView)
-        contentView.addSubviews(productCardView, reviewCollection)
+        contentView.addSubviews(productCardView, reviewsView)
         
         // Setup custom view
         priceView.dropShadow()
         
         // Set default value for label's
-        priceView.greenPriceView.setTitleForPriceLabel(title: String(values.productPrice))
         priceView.greenPriceView.setTitleForProductCountLabel(title: String(values.countOfProduct))
-        productCardView.setProductName(title: String(values.productName))
-        productCardView.setManufaturedCountryLabel(title: String(values.manufacturerСountry))
-        productCardView.setDescriptionInfo(title: String(values.description), allDescription: String(values.descriptionInfo))
+        priceView.greenPriceView.setTitleForPriceLabel(title: String(values.productPrice))
+        productCardView.setupTitles(with: values)
+        reviewsView.setupTitles(with: values)
         
         // Call method's
         setupTargetsForButton()
@@ -72,6 +71,9 @@ final class MainViewController: UIViewController {
         
         // Setup target for product card view button
         productCardView.addTargetForAllCharacteristicsButton(target: self, selector: #selector(allCharacteristicsButtonTapped))
+        
+        // Setup target for added review button
+        reviewsView.addTargetForAddedReviewButton(target: self, selector: #selector(addReviewButtonTapped))
     }
     
     //MARK: - Objective - C methods
@@ -100,7 +102,12 @@ final class MainViewController: UIViewController {
     
     /// Logic for all characteristics button
     @objc private func allCharacteristicsButtonTapped() {
-        print("Просмотре всех характеристик продукта")
+        print("Просмотреть всех характеристик продукта")
+    }
+    
+    /// Logic for add review button
+    @objc private func addReviewButtonTapped() {
+        print("Добавить отзыв")
     }
 }
 
@@ -114,7 +121,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = reviewCollection.dequeueReusableCell(withReuseIdentifier: ReviewsCollectionCell.reuseID, for: indexPath) as? ReviewsCollectionCell else { return UICollectionViewCell() }
+        guard let cell = reviewsView.reviewsCollection.dequeueReusableCell(withReuseIdentifier: ReviewsCollectionCell.reuseID, for: indexPath) as? ReviewsCollectionCell else { return UICollectionViewCell() }
         cell.configureCell(with: values.reviews[indexPath.row])
         return cell
     }
@@ -154,11 +161,11 @@ private extension MainViewController {
             productCardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
             // Review collection
-            reviewCollection.topAnchor.constraint(equalTo: productCardView.bottomAnchor),
-            reviewCollection.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            reviewCollection.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            reviewCollection.heightAnchor.constraint(equalToConstant: 200),
-            reviewCollection.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            reviewsView.topAnchor.constraint(equalTo: productCardView.bottomAnchor),
+            reviewsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            reviewsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            reviewsView.heightAnchor.constraint(equalToConstant: 250),
+            reviewsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
             // Price view
             priceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

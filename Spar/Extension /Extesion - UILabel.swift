@@ -9,7 +9,7 @@ import UIKit
 
 extension UILabel {
     
-    convenience init(text: String? = nil, font: UIFont? = .systemFont(ofSize: 14), textColor: UIColor? = nil) {
+    convenience init(text: String? = nil, font: UIFont? = .systemFont(ofSize: 14), textColor: UIColor? = nil, numberOfLines: Int? = 1) {
         self.init(frame: .infinite)
         
         if let text = text {
@@ -22,6 +22,10 @@ extension UILabel {
         
         if let color = textColor {
             self.textColor = color
+        }
+        
+        if let numberOfLines = numberOfLines {
+            self.numberOfLines = numberOfLines
         }
     }
 }
