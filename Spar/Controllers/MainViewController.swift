@@ -23,7 +23,7 @@ final class MainViewController: UIViewController {
         return scroll
     }()
     private lazy var contentView = UIView()
-    private lazy var productCardView = ProductCardView()
+    private lazy var productCardView = goi()
     private lazy var reviewsView: ReviewsView = {
         let view = ReviewsView()
         view.reviewsCollection.delegate = self

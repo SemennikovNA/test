@@ -8,6 +8,10 @@
 import UIKit
 
 final class TabBarController: UITabBarController {
+    
+    //MARK: - Properties
+    
+    let values = Values()
 
     //MARK: - Life cycle
     
@@ -21,21 +25,17 @@ final class TabBarController: UITabBarController {
     //MARK: - Private methods
     /// Method for installing tab bar
     private func setupTabBar() {
-        // Setup view controllers for tab bar
          viewControllers = [
-            setupViewControllers(viewController: MainViewController(), title: "Главная", normalImage: "list.bullet.clipboard", selectedImage: "list.clipboard.fill"),
-            setupViewControllers(viewController: CatalogViewController(), title: "Каталог", normalImage: "greetingcard", selectedImage: "greetingcard.fill"),
-            setupViewControllers(viewController: BasketViewController(), title: "Корзина", normalImage: "cart", selectedImage: "cart.fill"),
-            setupViewControllers(viewController: ProfileViewController(), title: "Профиль", normalImage: "person", selectedImage: "person.fill")
+            setupViewControllers(viewController: MainViewController(), title: values.mainTitle, normalImage: values.mainNormalImage, selectedImage: values.mainSelectedImage),
+            setupViewControllers(viewController: CatalogViewController(), title: values.catalogTitle, normalImage: values.catalogNormalImage, selectedImage: values.catalogSelectedImage),
+            setupViewControllers(viewController: BasketViewController(), title: values.basketTitle, normalImage: values.basketNormalImage, selectedImage: values.basketSelectedImage),
+            setupViewControllers(viewController: ProfileViewController(), title: values.profileTitle, normalImage: values.profileNormalImage, selectedImage: values.profileSelectedImage)
          ]
-        
-        // Setup tab bar colors
         tabBar.tintColor = .systemGreen
     }
     
     /// Method for setting an element in a tab bar
     private func setupViewControllers(viewController: UIViewController, title: String, normalImage: String = "", selectedImage: String = "") -> UIViewController {
-    
         viewController.title = title
         viewController.tabBarItem.image = UIImage(systemName: normalImage)
         viewController.tabBarItem.selectedImage = UIImage(systemName: selectedImage)
