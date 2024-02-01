@@ -50,6 +50,9 @@ final class MainViewController: UIViewController {
         scrollView.addSubviews(contentView)
         contentView.addSubviews(productCardView, reviewCollection)
         
+        // Setup review colletciton
+        reviewCollection.register(ReviewCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ReviewCollectionViewHeader.reuseID)
+        
         // Setup custom view
         priceView.dropShadow()
         
@@ -130,6 +133,24 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let insetForSectionAt = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         return insetForSectionAt
     }
+    
+    // Setup headers methods
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+            if kind == UICollectionView.elementKindSectionHeader {
+                guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ReviewCollectionViewHeader.reuseID, for: indexPath) as? ReviewCollectionViewHeader else { return UICollectionReusableView() }
+                headerView.setupHeader(with: values)
+                return headerView
+            } else {
+                return UICollectionReusableView()
+            }
+        }
+
+        // Setup header size
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+            let headerSize = CGSize(width: collectionView.frame.size.width, height: 10)
+            return headerSize
+        }
 }
 
 //MARK: Constraints methods

@@ -32,6 +32,7 @@ class ReviewCollectionView: UICollectionView {
     /// Setup collection
     private func setupCollection() {
         self.register(ReviewsCollectionCell.self, forCellWithReuseIdentifier: ReviewsCollectionCell.reuseID)
+        self.register(ReviewCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ReviewCollectionViewHeader.reuseID)
         self.showsHorizontalScrollIndicator = false
     }
 }

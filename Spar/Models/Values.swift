@@ -22,4 +22,7 @@ struct Values {
         ReviewModel(name: "Наталья У.", date: "01.03.2022", starCount: 0, review: "Не понравилась, странный вкус когда завариваешь чай, деньги на ветер :с"),
         ReviewModel(name: "Надежда Н.", date: "01.04.2022", starCount: 0, review: "Наталья не нравится не берите, мы берем всегда только добавку липу, оздоровляющий эффект")
     ]
+    
+    var headerTitleText = "Отзывы"
+    var headerButtonTitle = "Все 154"
 }

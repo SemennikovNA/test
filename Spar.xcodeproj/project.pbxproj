@@ -27,6 +27,7 @@
 		1E6AB5192B6ABADD0036803A /* Extesion - UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5182B6ABADD0036803A /* Extesion - UILabel.swift */; };
 		1E6AB51B2B6B51FD0036803A /* ReviewsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB51A2B6B51FD0036803A /* ReviewsCollectionCell.swift */; };
 		1E6AB51D2B6B565F0036803A /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB51C2B6B565F0036803A /* ReviewModel.swift */; };
+		1E6AB5212B6B82C40036803A /* ReviewCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AB5202B6B82C40036803A /* ReviewCollectionViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		1E6AB5182B6ABADD0036803A /* Extesion - UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extesion - UILabel.swift"; sourceTree = "<group>"; };
 		1E6AB51A2B6B51FD0036803A /* ReviewsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCollectionCell.swift; sourceTree = "<group>"; };
 		1E6AB51C2B6B565F0036803A /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		1E6AB5202B6B82C40036803A /* ReviewCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				1E6AB5102B6A6FDD0036803A /* GreenPriceView.swift */,
 				1E6AB5142B6A911E0036803A /* ProductCardView.swift */,
 				1E6AB51A2B6B51FD0036803A /* ReviewsCollectionCell.swift */,
+				1E6AB5202B6B82C40036803A /* ReviewCollectionViewHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				1E6AB5012B6A307F0036803A /* ReviewCollectionView.swift in Sources */,
 				1E6AB5132B6A78540036803A /* Values.swift in Sources */,
 				1E6AB50D2B6A45760036803A /* CustomNavigationController.swift in Sources */,
+				1E6AB5212B6B82C40036803A /* ReviewCollectionViewHeader.swift in Sources */,
 				1E6AB5172B6A9FAB0036803A /* Extension - UIStackView.swift in Sources */,
 				1E6AB50B2B6A39310036803A /* CatalogViewController.swift in Sources */,
 				1E6AB5192B6ABADD0036803A /* Extesion - UILabel.swift in Sources */,
