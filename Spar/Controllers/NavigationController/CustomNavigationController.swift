@@ -33,8 +33,8 @@ final class CustomNavigationController: UINavigationController {
     /// Setup rigth bar button item's
     private func configureRightButtons(for viewController: UIViewController) {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .done, target: self, action: #selector(goBack))
-        let listButton = UIBarButtonItem(image: UIImage(systemName: "list.bullet.rectangle.portrait"), style: .done, target: self, action: #selector(goBack))
-        let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .done, target: self, action: #selector(goBack))
+        let listButton = UIBarButtonItem(image: UIImage(systemName: "list.bullet.rectangle.portrait"), style: .done, target: self, action: #selector(listButtonTapped))
+        let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .done, target: self, action: #selector(shareButtonTapped))
         let likeButton = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .done, target: self, action: #selector(likeButtonTapped))
         let navigationButtons = [backButton, listButton, likeButton, shareButton]
         navigationButtons.forEach { item in
@@ -47,7 +47,7 @@ final class CustomNavigationController: UINavigationController {
     // MARK: - Objective - C methods
     /// Action method for left bar button item
     @objc private func goBack() {
-        popToRootViewController(animated: true)
+        print("Назад")
     }
     
     /// Action method for list bar button item
@@ -57,7 +57,7 @@ final class CustomNavigationController: UINavigationController {
     
     /// Action method for share bar button item
     @objc private func shareButtonTapped() {
-        print("Поделится товаромпш")
+        print("Поделится товаром")
     }
     
     /// Action method for like bar button item

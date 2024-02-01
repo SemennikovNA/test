@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewsStar: UIView {
+final class ReviewsStar: UIView {
     
     //MARK: - User elements
     

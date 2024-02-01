@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StarView: UIView {
+final class StarView: UIView {
     
         /// Method for drawing
         override func draw(_ rect: CGRect) {

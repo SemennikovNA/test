@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewCollectionView: UICollectionView {
+final class ReviewCollectionView: UICollectionView {
     
     //MARK: - Properties
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewsCollectionCell: UICollectionViewCell {
+final class ReviewsCollectionCell: UICollectionViewCell {
     
     //MARK: - Properties
     
@@ -41,18 +41,9 @@ class ReviewsCollectionCell: UICollectionViewCell {
         self.layer.masksToBounds = true
     }
     
-    //MARK: - Open methods
-    /// Method configure cell data
-    func configureCell(with model: ReviewModel) {
-                nameLabel.text = model.name
-                dateLabel.text = model.date
-                reviewLabel.text = model.review
-    }
-    
     //MARK: - Private methods
     /// Setup cell elements
     private func setupCell() {
-        
         // Setup cell
         self.layer.borderColor = UIColor.gray.cgColor
         self.layer.borderWidth = 0.3
@@ -64,11 +55,24 @@ class ReviewsCollectionCell: UICollectionViewCell {
         reviewLabel.minimumScaleFactor = 0.5
         
         // Setup content cell view
-        contentCellView.addSubviews(nameLabel, dateLabel, starCountView, reviewLabel)
+        contentCellView.addSubviews(
+            nameLabel,
+            dateLabel,
+            starCountView,
+            reviewLabel
+        )
+    }
+    
+    //MARK: - Open methods
+    /// Method configure cell data
+    func configureCell(with model: ReviewModel) {
+                nameLabel.text = model.name
+                dateLabel.text = model.date
+                reviewLabel.text = model.review
     }
 }
 
-//MARK: - Extension
+//MARK: - Private extension
 
 private extension ReviewsCollectionCell {
     /// Setup constraints for each elements in cell

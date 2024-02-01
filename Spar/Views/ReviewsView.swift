@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ReviewsView: UIView {
+final class ReviewsView: UIView {
     
     //MARK: - User interface elements
     
-    var reviewsCollection = ReviewCollectionView()
+    lazy var reviewsCollection = ReviewCollectionView()
     private lazy var headerTitle = UILabel(text: "", font: .boldSystemFont(ofSize: 17), textColor: .black)
     private lazy var viewAllReviewsButton: UIButton = {
         let button = UIButton()
@@ -50,7 +50,12 @@ class ReviewsView: UIView {
     //MARK: - Private method
     
     private func setupView() {
-        self.addSubviews(headerTitle, viewAllReviewsButton, reviewsCollection, addedReviewButton)
+        self.addSubviews(
+            headerTitle,
+            viewAllReviewsButton,
+            reviewsCollection,
+            addedReviewButton
+        )
     }
     
     //MARK: - Open methods
@@ -63,6 +68,11 @@ class ReviewsView: UIView {
         addedReviewButton.setTitle(addedReviewButtonTitle, for: .normal)
     }
     
+    func addTarhgetForViewAllReviewsButton(target: Any, selector: Selector) {
+        viewAllReviewsButton.addTarget(target, action: selector, for: .touchUpInside)
+    }
+    
+    /// Method for setup targets for added review button
     func addTargetForAddedReviewButton(target: Any, selector: Selector) {
         addedReviewButton.addTarget(target, action: selector, for: .touchUpInside)
     }

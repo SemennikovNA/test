@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductCardView: UIView {
+final class ProductCardView: UIView {
     
     //MARK: - User elements
     
@@ -85,7 +85,6 @@ class ProductCardView: UIView {
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
         return button
     }()
-    
     // Label's
     private lazy var descriptionLabel = UILabel(font: .boldSystemFont(ofSize: 15), textColor: .black)
     private lazy var descriptionInfoLabel = UILabel(font: .systemFont(ofSize: 12), textColor: .black, numberOfLines: 0)
@@ -119,8 +118,22 @@ class ProductCardView: UIView {
     
     private func setupView() {
         // Setup view
-        self.addSubviews(productImage, productName, manufacturedCountryImage, manufacturedCountryLabel, productInfoStack)
-        productImage.addSubviews(priceToTheCardImage, saleImage)
+        self.addSubviews(
+            productImage,
+            productName,
+            manufacturedCountryImage,
+            manufacturedCountryLabel,
+            productInfoStack
+        )
+        productImage.addSubviews(
+            priceToTheCardImage,
+            saleImage,
+            reviewStack
+        )
+        reviewStack.addArrangedSubviews(
+            starImage,
+            reviewLabel
+        )
         productInfoStack.addArrangedSubviews(
             descriptionLabel,
             descriptionInfoLabel,
@@ -132,19 +145,9 @@ class ProductCardView: UIView {
             carbohydratesLabel,
             allCharacteristics
         )
-    
-        // Call method's
-        setupReviewStack()
-    }
-    
-    private func setupReviewStack() {
-        productImage.addSubviews(reviewStack)
-        reviewStack.addArrangedSubviews(starImage, reviewLabel)
-        
     }
     
     //MARK: - Open methods
-    
     /// Setup value for product name title's
     func setupTitles(with model: Values) {
         productName.text = model.productName
@@ -166,7 +169,7 @@ class ProductCardView: UIView {
     }
 }
 
-//MARK: - Extension
+//MARK: - Private extension
 
 private extension ProductCardView {
     /// Method for setup contraints product card view

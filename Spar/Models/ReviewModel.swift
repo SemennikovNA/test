@@ -8,7 +8,7 @@
 import Foundation
 
 struct ReviewModel {
-    
+    /// Model for reviews
     let name: String
     let date: String
     let review: String

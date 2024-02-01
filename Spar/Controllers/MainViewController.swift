@@ -23,7 +23,7 @@ final class MainViewController: UIViewController {
         return scroll
     }()
     private lazy var contentView = UIView()
-    private lazy var productCardView = goi()
+    private lazy var productCardView = ProductCardView()
     private lazy var reviewsView: ReviewsView = {
         let view = ReviewsView()
         view.reviewsCollection.delegate = self
@@ -66,6 +66,7 @@ final class MainViewController: UIViewController {
     /// Setup targets for buttons
     private func setupTargetsForButton() {
         // Setup target for green view button's
+        priceView.addTargetsForChoiceOfPackagingSegmentedControl(target: self, selector: #selector(сhoiceOfPackagingSegmentedControlTapped))
         priceView.greenPriceView.addTargetsForMinusButton(target: self, selector: #selector(minusButtonTapped))
         priceView.greenPriceView.addTargetsForPlusButton(target: self, selector: #selector(plusButtonTapped))
         
@@ -74,9 +75,15 @@ final class MainViewController: UIViewController {
         
         // Setup target for added review button
         reviewsView.addTargetForAddedReviewButton(target: self, selector: #selector(addReviewButtonTapped))
+        reviewsView.addTarhgetForViewAllReviewsButton(target: self, selector: #selector(viewAllReviewsButtonTapped))
     }
     
     //MARK: - Objective - C methods
+    /// Logic for choice of packaging segmented control
+    @objc private func сhoiceOfPackagingSegmentedControlTapped() {
+        print("Выбор упаковки")
+    }
+    
     /// Logic that works when you press the minus button
     @objc private func minusButtonTapped() {
         if values.countOfProduct > 1 {
@@ -102,7 +109,12 @@ final class MainViewController: UIViewController {
     
     /// Logic for all characteristics button
     @objc private func allCharacteristicsButtonTapped() {
-        print("Просмотреть всех характеристик продукта")
+        print("Просмотреть всех характеристики продукта")
+    }
+    
+    /// Logic for  view all reviews button
+    @objc private func viewAllReviewsButtonTapped() {
+        print("Посмотреть все отзывы")
     }
     
     /// Logic for add review button

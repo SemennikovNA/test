@@ -11,14 +11,12 @@ final class PriceView: UIView {
     
     //MARK: - User elements
     
-    let greenPriceView = GreenPriceView()
-
+    lazy var greenPriceView = GreenPriceView()
     private lazy var choiceOfPackagingSegmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Шт", "Кг"])
         segmentedControl.selectedSegmentIndex = 0
         return segmentedControl
     }()
-    
     private lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -29,7 +27,6 @@ final class PriceView: UIView {
          label.attributedText = attributedText
          return label
     }()
-    
     private lazy var oldPrice: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
@@ -43,6 +40,7 @@ final class PriceView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        // Call method's
         setupView()
         setupConstraints()
     }
@@ -60,14 +58,26 @@ final class PriceView: UIView {
     //MARK: - Private methods
     
     private func setupView() {
-        self.addSubviews(choiceOfPackagingSegmentedControl, priceLabel, oldPrice, greenPriceView)
+        self.addSubviews(
+            choiceOfPackagingSegmentedControl,
+            priceLabel,
+            oldPrice,
+            greenPriceView
+        )
+    }
+    
+    //MARK: - Open methods
+    
+    func addTargetsForChoiceOfPackagingSegmentedControl(target: Any, selector: Selector) {
+        choiceOfPackagingSegmentedControl.addTarget(target, action: selector, for: .valueChanged)
     }
 }
 
-//MARK: - Extension
+
+//MARK: - Private extension
 
 private extension PriceView {
-    
+    /// Method for setup contraints price view
     func setupConstraints() {
         NSLayoutConstraint.activate([
             // Choice of packaging segmented control
