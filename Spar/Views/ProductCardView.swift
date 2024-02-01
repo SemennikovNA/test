@@ -58,7 +58,7 @@ class ProductCardView: UIView {
         let button = UIButton()
         button.setTitleColor(.systemGreen, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
-        button.setTitle("Все характеристики", for: .normal)g
+        button.setTitle("Все характеристики", for: .normal)
         return button
     }()
     
@@ -96,7 +96,17 @@ class ProductCardView: UIView {
     private func setupView() {
         self.addSubviews(productImage, productName, manufacturedCountryImage, manufacturedCountryLabel, productInfoStack)
         productImage.addSubviews(priceToTheCardImage, saleImage)
-        productInfoStack.addArrangedSubviews(descriptionLabel, descriptionInfoLabel, mainCharacteristics, manufacturedLabel, energyPriceLabel, fatsLabel, proteinLabel, carbohydratesLabel, allCharacteristics)
+        productInfoStack.addArrangedSubviews(
+            descriptionLabel,
+            descriptionInfoLabel,
+            mainCharacteristics,
+            manufacturedLabel,
+            energyPriceLabel,
+            fatsLabel,
+            proteinLabel,
+            carbohydratesLabel,
+            allCharacteristics
+        )
     }
     
     //MARK: - Open methods
@@ -113,6 +123,11 @@ class ProductCardView: UIView {
         descriptionLabel.text = title
         descriptionInfoLabel.text = allDescription
         descriptionInfoLabel.numberOfLines = 0
+    }
+    
+    /// Add target for allCharacteristics button
+    func addTargetForAllCharacteristicsButton(target: Any, selector: Selector) {
+        allCharacteristics.addTarget(target, action: selector, for: .touchUpInside)
     }
 }
 
