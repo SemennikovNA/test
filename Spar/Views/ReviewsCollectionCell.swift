@@ -84,7 +84,7 @@ private extension ReviewsCollectionCell {
             nameLabel.topAnchor.constraint(equalTo: contentCellView.topAnchor, constant: 10),
             nameLabel.leadingAnchor.constraint(equalTo: contentCellView.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: contentCellView.trailingAnchor, constant: -20),
-            nameLabel.heightAnchor.constraint(equalToConstant: 15),
+            nameLabel.heightAnchor.constraint(equalToConstant: 20),
             
             // Date label
             dateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),

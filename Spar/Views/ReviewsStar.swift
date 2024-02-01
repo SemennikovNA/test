@@ -47,7 +47,7 @@ class ReviewsStar: UIView {
         secondStar.backgroundColor = .systemYellow
         thirdStar.backgroundColor = .systemYellow
         fourthStar.backgroundColor = .systemYellow
-        fifthStar.backgroundColor = .lightGray
+        fifthStar.backgroundColor = .systemGray5
     }
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 extension UILabel {
-    
+    /// Custom initialize for fast setup labels
     convenience init(text: String? = nil, font: UIFont? = .systemFont(ofSize: 14), textColor: UIColor? = nil, numberOfLines: Int? = 1) {
         self.init(frame: .infinite)
         

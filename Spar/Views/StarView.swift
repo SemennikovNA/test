@@ -38,7 +38,7 @@ class StarView: UIView {
             
             let center = CGPoint(x: rect.origin.x + rect.width / 2.0, y: rect.origin.y + rect.height / 2.0)
             
-            let pointsOnStar = 5  // Используйте 5 точек для одной звезды
+            let pointsOnStar = 5
             
             var angle: CGFloat = CGFloat(CGFloat.pi / 2.0)
             let angleIncrement = CGFloat(Double.pi * 2.0 / Double(pointsOnStar))

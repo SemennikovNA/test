@@ -92,8 +92,8 @@ private extension ReviewsView {
             
             // Added reviews button
             addedReviewButton.topAnchor.constraint(equalTo: reviewsCollection.bottomAnchor, constant: 10),
-            addedReviewButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            addedReviewButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            addedReviewButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            addedReviewButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             addedReviewButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
         ])
     }

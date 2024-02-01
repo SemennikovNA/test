@@ -27,6 +27,31 @@ class ProductCardView: UIView {
         image.image = UIImage(named: "sale")
         return image
     }()
+    private lazy var reviewStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = -20
+        return stack
+    }()
+    private lazy var starImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.image = UIImage(named: "star")
+        return image
+    }()
+    private lazy var reviewLabel: UILabel = {
+        let label = UILabel()
+        let mainText = "4.1"
+        let subscriptText = " | 19 отзывов"
+        let attributedText = NSMutableAttributedString(string: mainText, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15)])
+        let subscriptAttributes: [NSAttributedString.Key: Any] = [
+              .font: UIFont.systemFont(ofSize: 15),
+              .foregroundColor: UIColor.gray
+          ]
+        attributedText.append(NSAttributedString(string: subscriptText, attributes: subscriptAttributes))
+        label.attributedText = attributedText
+        return label
+    }()
     private lazy var productName: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 25)
@@ -58,19 +83,18 @@ class ProductCardView: UIView {
         let button = UIButton()
         button.setTitleColor(.systemGreen, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
-        button.setTitle("Все характеристики", for: .normal)
         return button
     }()
     
     // Label's
-    private lazy var descriptionLabel = UILabel(text: "", font: .boldSystemFont(ofSize: 15), textColor: .black)
-    private lazy var descriptionInfoLabel = UILabel(text: "", font: .systemFont(ofSize: 12), textColor: .black, numberOfLines: 0)
-    private lazy var mainCharacteristics = UILabel(text: "Основные характеристики", font: .boldSystemFont(ofSize: 15), textColor: .black)
-    private lazy var manufacturedLabel = UILabel(text: "Производство..........................Россия, Краснодарский край", font: .systemFont(ofSize: 12), textColor: .black)
-    private lazy var energyPriceLabel = UILabel(text: "Энергетическая ценность, ккал/100 г........25 ккал, 105 кДж", font: .systemFont(ofSize: 12), textColor: .black)
-    private lazy var fatsLabel = UILabel(text: "Жиры/100 г........................................................................0,1 г", font: .systemFont(ofSize: 12), textColor: .black)
-    private lazy var proteinLabel = UILabel(text: "Белки/100 г........................................................................1,3 г", font: .systemFont(ofSize: 12), textColor: .black)
-    private lazy var carbohydratesLabel = UILabel(text: "Углеводы/100 г..................................................................3,3 г", font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var descriptionLabel = UILabel(font: .boldSystemFont(ofSize: 15), textColor: .black)
+    private lazy var descriptionInfoLabel = UILabel(font: .systemFont(ofSize: 12), textColor: .black, numberOfLines: 0)
+    private lazy var mainCharacteristics = UILabel(font: .boldSystemFont(ofSize: 15), textColor: .black)
+    private lazy var manufacturedLabel = UILabel(font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var energyPriceLabel = UILabel(font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var fatsLabel = UILabel(font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var proteinLabel = UILabel(font: .systemFont(ofSize: 12), textColor: .black)
+    private lazy var carbohydratesLabel = UILabel(font: .systemFont(ofSize: 12), textColor: .black)
         
     //MARK: - Inititalize
     
@@ -109,16 +133,31 @@ class ProductCardView: UIView {
             allCharacteristics
         )
     
-        //
+        // Call method's
+        setupReviewStack()
+    }
+    
+    private func setupReviewStack() {
+        productImage.addSubviews(reviewStack)
+        reviewStack.addArrangedSubviews(starImage, reviewLabel)
+        
     }
     
     //MARK: - Open methods
+    
     /// Setup value for product name title's
     func setupTitles(with model: Values) {
         productName.text = model.productName
         manufacturedCountryLabel.text = model.manufacturerСountry
         descriptionLabel.text = model.description
         descriptionInfoLabel.text = model.descriptionInfo
+        mainCharacteristics.text = model.mainCharacteristicsTitle
+        manufacturedLabel.text = model.manufacturedLabelTitle
+        energyPriceLabel.text = model.energyPriceLabelTitle
+        fatsLabel.text = model.fatsLabelTitle
+        proteinLabel.text = model.proteinLabelTitle
+        carbohydratesLabel.text = model.carbohydratesLabelTitle
+        allCharacteristics.setTitle(model.allCharacteristicsButtonTitle, for: .normal)
     }
     
     /// Add target for allCharacteristics button
@@ -126,7 +165,6 @@ class ProductCardView: UIView {
         allCharacteristics.addTarget(target, action: selector, for: .touchUpInside)
     }
 }
-
 
 //MARK: - Extension
 
@@ -147,10 +185,16 @@ private extension ProductCardView {
             priceToTheCardImage.widthAnchor.constraint(equalToConstant: 100),
             
             // Sale image view
-            saleImage.bottomAnchor.constraint(equalTo: productImage.bottomAnchor, constant: -10),
+            saleImage.bottomAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 5),
             saleImage.trailingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: -10),
-            saleImage.heightAnchor.constraint(equalToConstant: 40),
-            saleImage.widthAnchor.constraint(equalToConstant: 70),
+            saleImage.heightAnchor.constraint(equalToConstant: 30),
+            saleImage.widthAnchor.constraint(equalToConstant: 50),
+            
+            // Review stack
+            reviewStack.leadingAnchor.constraint(equalTo: productImage.leadingAnchor),
+            reviewStack.bottomAnchor.constraint(equalTo: productImage.bottomAnchor),
+            reviewStack.widthAnchor.constraint(equalToConstant: 155),
+            reviewStack.heightAnchor.constraint(equalToConstant: 20),
             
             // Product name label
             productName.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 10),
