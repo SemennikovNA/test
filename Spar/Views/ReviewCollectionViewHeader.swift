@@ -60,14 +60,14 @@ private extension ReviewCollectionViewHeader {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             // Header title
-            headerTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            headerTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             headerTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            headerTitle.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
+//            headerTitle.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
             
             // View all reviews button
-            viewAllReviewsButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 50),
+            viewAllReviewsButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             viewAllReviewsButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            viewAllReviewsButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
+//            viewAllReviewsButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
         ])
     }
 }

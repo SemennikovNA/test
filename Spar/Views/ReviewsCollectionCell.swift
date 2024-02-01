@@ -58,6 +58,8 @@ class ReviewsCollectionCell: UICollectionViewCell {
     private func setupCell() {
         
         // Setup cell
+        self.layer.borderColor = UIColor.gray.cgColor
+        self.layer.borderWidth = 0.3
         self.addSubviews(contentCellView)
         
         // Setup review label
